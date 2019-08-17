@@ -3,6 +3,9 @@ module.exports = {
     title: 'montoya.dev',
     description: 'Portfolio for Ryan Montoya',
     author: '@rcmontoy',
+    github: 'rcmontoy',
+    email: 'ryan@montoya.dev',
+    linkedin: 'rcmontoy',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

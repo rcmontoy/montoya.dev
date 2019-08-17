@@ -19,9 +19,7 @@ const Layout = ({ children }) => (
       }}
     >
       <main>{children}</main>
-      <footer>
-        <p><a href="mailto:ryan@montoya.dev?subject=Hello">ryan@montoya.dev</a></p>
-      </footer>
+      <footer />
     </div>
   </>
 );
