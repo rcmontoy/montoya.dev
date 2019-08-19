@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -30,9 +31,21 @@ const IndexPage = () => {
 
       <h3>Links</h3>
       <ul>
-        <li><a href={`mailto:${site.siteMetadata.email}?subject=Hello`}>Email</a></li>
-        <li><a href={`https://github.com/${site.siteMetadata.github}`}>GitHub</a></li>
-        <li><a href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}/`}>LinkedIn</a></li>
+        <li>
+          <OutboundLink href={`mailto:${site.siteMetadata.email}?subject=Hello`}>
+            Email
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink href={`https://github.com/${site.siteMetadata.github}`}>
+            GitHub
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}/`}>
+            LinkedIn
+          </OutboundLink>
+        </li>
       </ul>
     </Layout>
   );
