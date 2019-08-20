@@ -1,9 +1,10 @@
 import React from 'react';
+import GitHubButton from 'react-github-btn';
 import { graphql, useStaticQuery } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-gtag';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import styles from './index.module.css';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const IndexPage = () => {
   const { site } = useStaticQuery(
@@ -11,42 +12,35 @@ const IndexPage = () => {
       query {
         site {
           siteMetadata {
-            email
             github
-            linkedin
           }
         }
       }
     `,
   );
 
+  const { siteMetadata } = site;
+
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Ryan Montoya</h1>
-      <p>
-        {'Building a marketplace for insurance linked securities (ILS) @ '}
-        <a href="https://ledgerinvesting.com">Ledger Investing</a>
-      </p>
+      <div className={styles.hero}>
+        <h1 className={styles.headline}>{'Hi, I\'m Ryan'}</h1>
+        <p className={styles.intro}>
+          {'I\'m currently building a marketplace for insurance linked securities at '}
+          <a href="https://www.ledgerinvesting.com">Ledger Investing</a>
+          {'. I enjoy writing software, casually gaming, and taking pictures here and there.'}
+        </p>
 
-      <h3>Links</h3>
-      <ul>
-        <li>
-          <OutboundLink href={`mailto:${site.siteMetadata.email}?subject=Hello`}>
-            Email
-          </OutboundLink>
-        </li>
-        <li>
-          <OutboundLink href={`https://github.com/${site.siteMetadata.github}`}>
-            GitHub
-          </OutboundLink>
-        </li>
-        <li>
-          <OutboundLink href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}/`}>
-            LinkedIn
-          </OutboundLink>
-        </li>
-      </ul>
+        <GitHubButton
+          href={`https://github.com/${siteMetadata.github}`}
+          data-size="large"
+          aria-label={`Follow @${siteMetadata.github} on GitHub`}
+        >
+          Follow @
+          {siteMetadata.github}
+        </GitHubButton>
+      </div>
     </Layout>
   );
 };

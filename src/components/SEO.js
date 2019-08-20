@@ -18,7 +18,7 @@ function SEO({
       query {
         site {
           siteMetadata {
-            title
+            name
             description
             author
           }
@@ -35,7 +35,7 @@ function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s - ${site.siteMetadata.name}`}
       meta={[
         {
           name: 'description',

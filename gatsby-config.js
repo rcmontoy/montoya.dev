@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'montoya.dev',
+    name: 'Ryan Montoya',
     description: 'Portfolio for Ryan Montoya',
     author: '@rcmontoy',
     github: 'rcmontoy',
@@ -51,6 +52,14 @@ module.exports = {
         trackingId: 'UA-84484001-2',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/content/`,
+      },
+    },
+    'gatsby-transformer-remark',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
