@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'montoya.dev',
+    siteUrl: 'https://www.montoya.dev',
     name: 'Ryan Montoya',
     description: 'Portfolio for Ryan Montoya',
     author: '@rcmontoy',
@@ -60,6 +61,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
+    'gatsby-plugin-sitemap',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
