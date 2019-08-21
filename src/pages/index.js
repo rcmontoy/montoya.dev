@@ -28,9 +28,10 @@ const IndexPage = () => {
         <h1 className={styles.headline}>{'Hi, I\'m Ryan'}</h1>
         <p className={styles.intro}>
           {'I\'m currently building a marketplace for insurance linked securities at '}
-          <a href="https://www.ledgerinvesting.com">Ledger Investing</a>.
+          <a href="https://www.ledgerinvesting.com">Ledger Investing</a>
+          {'.'}
           <br />
-          {' I enjoy writing software, casually gaming, and taking pictures here and there.'}
+          {'I enjoy writing software, casually gaming, and taking pictures here and there.'}
         </p>
 
         <GitHubButton
