@@ -5,10 +5,6 @@ import styles from './Header.module.css';
 
 const NAV_LINKS = [
   {
-    path: '/blog',
-    name: 'Blog',
-  },
-  {
     path: '/me',
     name: 'Me',
   },

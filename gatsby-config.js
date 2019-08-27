@@ -3,7 +3,7 @@ module.exports = {
     title: 'montoya.dev',
     siteUrl: 'https://www.montoya.dev',
     name: 'Ryan Montoya',
-    description: 'Portfolio for Ryan Montoya',
+    description: 'Hi I\'m Ryan. I enjoy sharing my thoughts and experiences with software development, technology, and photography through in-depth candid articles.',
     author: '@rcmontoy',
     github: 'rcmontoy',
     email: 'ryan@montoya.dev',
@@ -70,8 +70,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-sitemap',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
   ],
 };

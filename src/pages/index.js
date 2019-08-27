@@ -1,25 +1,36 @@
 import React from 'react';
-import GitHubButton from 'react-github-btn';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import styles from './index.module.css';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import PostList from '../components/PostList';
+
+const convertEdgesToPosts = (edges) => edges.map((edge) => edge.node);
 
 const IndexPage = () => {
-  const { site } = useStaticQuery(
+  const { allMarkdownRemark } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            github
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+          edges {
+            node {
+              id
+              excerpt(pruneLength: 250)
+              frontmatter {
+                date(formatString: "MMMM DD, YYYY")
+                path
+                title
+              }
+            }
           }
         }
       }
     `,
   );
 
-  const { siteMetadata } = site;
+  const { edges } = allMarkdownRemark;
+  const posts = convertEdgesToPosts(edges);
 
   return (
     <Layout>
@@ -27,21 +38,10 @@ const IndexPage = () => {
       <div className={styles.hero}>
         <h1 className={styles.headline}>{'Hi, I\'m Ryan'}</h1>
         <p className={styles.intro}>
-          {'I\'m currently building a marketplace for insurance linked securities at '}
-          <a href="https://www.ledgerinvesting.com">Ledger Investing</a>
-          {'.'}
-          <br />
-          {'I enjoy writing software, casually gaming, and taking pictures here and there.'}
+          {`I share my love for writing software, great products, and technology with 
+          in-depth articles and detailed tutorials.`}
         </p>
-
-        <GitHubButton
-          href={`https://github.com/${siteMetadata.github}`}
-          data-size="large"
-          aria-label={`Follow @${siteMetadata.github} on GitHub`}
-        >
-          Follow @
-          {siteMetadata.github}
-        </GitHubButton>
+        <PostList posts={posts} />
       </div>
     </Layout>
   );
