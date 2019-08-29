@@ -1,5 +1,5 @@
 ---
-path: "/blog/post-with-code-snippets"
+path: "/posts/post-with-code-snippets"
 date: "2019-08-19"
 title: "Post with Code"
 ---
